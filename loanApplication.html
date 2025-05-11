@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Loan Application</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+    
+</head>
+<body class="bg-gray-50 font-inter">
+    <div class="min-h-screen flex">
+        <aside id="sidebar" class=" js-sidebar fixed inset-y-0 left-0 z-50 w-64 transition-transform duration-300 transform -translate-x-full sm:translate-x-0 bg-white border-r border-gray-200">
+            <div class="h-16 flex items-center justify-between px-4 border-b border-gray-200">
+                <img src="" alt="Logo" class="h-8"/>
+                <button id="closeSidebar" class="sm:hidden text-gray-500 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="p-4 space-y-1">
+                <a href="index.html" class="flex items-center px-4 py-3 text-sm font-medium text-custom rounded-lg bg-indigo-50">
+                    <i class="fas fa-home w-5 h-5 mr-3"></i>
+                    Dashboard
+                </a>
+                <a href="members.html" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-users w-5 h-5 mr-3"></i>
+                    Members
+                </a>
+                <a href="newmember.html" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-user-plus w-5 h-5 mr-3"></i>
+                    New Member
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-money-bill-wave w-5 h-5 mr-3"></i>
+                    Payments
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-cog w-5 h-5 mr-3"></i>
+                    Settings
+                </a>
+            </nav>
+        </aside>
+        <div class="flex-1 ml-64 p-8 transition-margin duration-300 ease-in-out" id="mainContent">
+            <nav class="bg-white shadow">
+                <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16">
+                        <div class="flex">
+                            <div class="flex-shrink-0 flex items-center">
+                                <button id="openSidebar" class="sm:hidden text-gray-500 hover:text-gray-600">
+                                    <i class="fas fa-bars text-xl"></i>
+                                </button>
+                                <img class="h-8 w-auto" src="" alt="Logo"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <main class="flex-grow container mx-auto px-4 py-8">
+                <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-sm p-8">
+                    <h1 class="text-2xl font-semibold text-gray-900 mb-6">Personal Loan Application</h1>
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Loan Type</label>
+                                <select class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom">
+                                    <option value="type-a">Type A - Personal Loan</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Amount</label>
+                                <input type="number" placeholder="Enter amount" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom"/>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Purpose</label>
+                                <textarea placeholder="Enter loan purpose" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom" rows="3"></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Application Date</label>
+                                <input type="date" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom"/>
+                            </div>
+                            <div class="mb-4">
+                                <h4 class="text-lg font-medium text-gray-900 mb-4">Guarantor Information</h4>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                        <input type="text" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom"/>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                        <input type="email" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom"/>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Relationship</label>
+                                        <input type="text" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom"/>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Contact Number</label>
+                                        <input type="tel" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h4 class="text-lg font-medium text-gray-900 mb-4">Additional Charges</h4>
+                                <div class="space-y-3" id="charges-list">
+                                    <div class="flex justify-between">
+                                        <span class="text-sm text-gray-500">Processing Fee (2%)</span>
+                                        <span class="text-sm font-medium text-gray-900">Rs.500</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-sm text-gray-500">Service Charge</span>
+                                        <span class="text-sm font-medium text-gray-900">Rs.100</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-sm text-gray-500">Total Additional Charges</span>
+                                        <span class="text-sm font-medium text-gray-900">Rs.600</span>
+                                    </div>
+                                </div>
+                                <button class="mt-4 px-4 py-2 text-sm text-custom hover:text-blue-700 flex items-center" onclick="addExtraCharge()">
+                                    <i class="fas fa-plus mr-2"></i>Add Extra Charges
+                                </button>
+                            </div>
+                            <div class="mt-6">
+                                <button class="w-full group relative inline-flex items-center justify-center px-6 py-3 bg-custom text-white !rounded-button hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-custom transition-colors">
+                                    Submit Application <span class="ml-1" title="Click to submit your loan application">ⓘ</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+    </div>
+    <script src="scripts/loanApplication.js">     
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="min-h-screen flex">
+        <aside id="sidebar" class=" js-sidebar fixed inset-y-0 left-0 z-50 w-64 transition-transform duration-300 transform -translate-x-full sm:translate-x-0 bg-white border-r border-gray-200">
+            <div class="h-16 flex items-center justify-between px-4 border-b border-gray-200">
+                <img src="" alt="Logo" class="h-8"/>
+                <button id="closeSidebar" class="sm:hidden text-gray-500 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="p-4 space-y-1">
+                <a href="index.html" class="flex items-center px-4 py-3 text-sm font-medium text-custom rounded-lg bg-indigo-50">
+                    <i class="fas fa-home w-5 h-5 mr-3"></i>
+                    Dashboard
+                </a>
+                <a href="members.html" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-users w-5 h-5 mr-3"></i>
+                    Members
+                </a>
+                <a href="newmember.html" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-user-plus w-5 h-5 mr-3"></i>
+                    New Member
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-money-bill-wave w-5 h-5 mr-3"></i>
+                    Payments
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-cog w-5 h-5 mr-3"></i>
+                    Settings
+                </a>
+            </nav>
+        </aside>
+        <div class="flex-1 min-w-0 sm:ml-64 transition-margin duration-300 ease-in-out" id="mainContent">
+            <nav class="bg-white shadow">
+                <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16">
+                        <div class="flex">
+                            <div class="flex-shrink-0 flex items-center">
+                                <button id="openSidebar" class="sm:hidden text-gray-500 hover:text-gray-600">
+                                    <i class="fas fa-bars text-xl"></i>
+                                </button>
+                                <img class="h-8 w-auto" src="" alt="Logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <main class="max-w-8xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+                <div class="bg-white shadow rounded-lg p-6 mb-8">
+                    <h1 class="text-2xl font-bold text-gray-900 mb-6">Loan Details</h1>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-sm text-gray-500">Loan Start Date</div>
+                            <div class="font-semibold">January 15, 2024</div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-sm text-gray-500">Loan Type</div>
+                            <div class="font-semibold">Personal Loan</div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-sm text-gray-500">Loan Amount</div>
+                            <div class="font-semibold">Rs.10,000.00</div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-sm text-gray-500">Loan Return Amount</div>
+                            <div class="font-semibold">Rs.11,200.00</div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-sm text-gray-500">Daily IST</div>
+                            <div class="font-semibold">Rs.1.50</div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg mb-8">
+                        <h2 class="text-lg font-semibold mb-4">First Week Summary</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <div class="text-sm text-gray-500">Arrears</div>
+                                <div class="font-semibold">Rs.150.00</div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Total Fine</div>
+                                <div class="font-semibold">Rs.25.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-sm text-gray-500">Payments Made</div>
+                            <div class="font-semibold">3</div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-sm text-gray-500">IST Collected</div>
+                            <div class="font-semibold">Rs.45.00</div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-sm text-gray-500">Fine Collected</div>
+                            <div class="font-semibold">Rs.25.00</div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg col-span-full">
+                            <div class="text-sm text-gray-500">Outstanding Loan Amount</div>
+                            <div class="font-semibold text-custom">Rs.9,130.00</div>
+                        </div>
+                    </div>
+                    <div class="mb-8">
+                        <h2 class="text-lg font-semibold mb-4">Payment History</h2>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead>
+                                    <tr>
+                                        <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                        <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+                                        <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Account</th>
+                                        <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Receipt ID</th>
+                                        <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fine</th>
+                                        <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Jan 22, 2024</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rs.300.00</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">A</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">#12345</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rs.10.00</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rs.9,700.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Jan 29, 2024</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rs.270.00</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">B</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">#12346</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rs.8.00</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rs.9,430.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h2 class="text-lg font-semibold mb-6">New Payment</h2>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Payment Date</label>
+                                    <input type="date" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Fine Amount</label>
+                                    <input type="text" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom" placeholder="Rs.0.00">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Account</label>
+                                    <select class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom">
+                                        <option>Account A</option>
+                                        <option>Account B</option>
+                                        <option>Account C</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Receipt ID</label>
+                                    <input type="text" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom" placeholder="Enter receipt ID">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Discount</label>
+                                    <input type="text" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom" placeholder="Rs.0.00">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Payment Amount</label>
+                                    <input type="text" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-custom focus:border-custom" placeholder="Enter amount">
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end space-x-4">
+                                <button type="button" class="!rounded-button px-4 py-2 border border-custom text-custom bg-white hover:bg-gray-50 font-medium">
+                                    Submit Payment
+                                </button>
+                                <button type="button" class="!rounded-button px-4 py-2 bg-custom text-white hover:bg-custom/90 font-medium">
+                                    Confirm Transaction
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+            
+        </div>
+    </div>
+
+    <script src="scripts/loanDetails.js"> </script>
+</body>
+</html>

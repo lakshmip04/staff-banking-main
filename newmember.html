@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Member Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="min-h-screen flex">
+        <aside id="sidebar" class=" js-sidebar fixed inset-y-0 left-0 z-50 w-64 transition-transform duration-300 transform -translate-x-full sm:translate-x-0 bg-white border-r border-gray-200">
+            <div class="h-16 flex items-center justify-between px-4 border-b border-gray-200">
+                <img src="" alt="Logo" class="h-8"/>
+                <button id="closeSidebar" class="sm:hidden text-gray-500 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="p-4 space-y-1">
+                <a href="index.html" class="flex items-center px-4 py-3 text-sm font-medium text-custom rounded-lg bg-indigo-50">
+                    <i class="fas fa-home w-5 h-5 mr-3"></i>
+                    Dashboard
+                </a>
+                <a href="members.html" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-users w-5 h-5 mr-3"></i>
+                    Members
+                </a>
+                <a href="newmember.html" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-user-plus w-5 h-5 mr-3"></i>
+                    New Member
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-money-bill-wave w-5 h-5 mr-3"></i>
+                    Payments
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-cog w-5 h-5 mr-3"></i>
+                    Settings
+                </a>
+            </nav>
+        </aside>
+        <div class="flex-1 min-w-0 sm:ml-64">
+            <header class="h-16 flex items-center justify-between px-4 sm:px-6 bg-white border-b border-gray-200">
+                <button id="openSidebar" class="sm:hidden text-gray-500 hover:text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-500">Welcome Staff, You're logged in</span>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-sm text-gray-500">Session expires in: <span id="countdown" class="font-medium">30:00</span></span>
+                        <button class="!rounded-button text-sm bg-custom text-white px-4 py-2">Logout</button>
+                    </div>
+                </div>
+            </header>
+            <main class="p-6">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-2xl font-semibold text-gray-900 mb-6">New Member Registration</h1>
+                    <form id="registrationForm" class="bg-white shadow-sm rounded-lg p-6 space-y-6">
+                        <div class="border-b border-gray-200 pb-6">
+                            <h2 class="text-lg font-medium text-gray-900 mb-4">Personal Details</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
+                                    <input type="text" required="" pattern="[A-Za-z ]+" class="w-full border-gray-300 focus:border-custom focus:ring-custom text-sm !rounded-button" placeholder="Enter first name"/>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
+                                    <input type="text" required="" pattern="[A-Za-z ]+" class="w-full border-gray-300 focus:border-custom focus:ring-custom text-sm !rounded-button" placeholder="Enter last name"/>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Date of Birth *</label>
+                                    <input type="date" required="" class="w-full border-gray-300 focus:border-custom focus:ring-custom text-sm !rounded-button"/>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Aadhar Card Number *</label>
+                                    <input type="text" required="" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" class="w-full border-gray-300 focus:border-custom focus:ring-custom text-sm !rounded-button" placeholder="XXXX-XXXX-XXXX"/>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Gender *</label>
+                                    <div class="space-x-4">
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="gender" value="male" class="text-custom focus:ring-custom" required=""/>
+                                            <span class="ml-2 text-sm">Male</span>
+                                        </label>
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="gender" value="female" class="text-custom focus:ring-custom"/>
+                                            <span class="ml-2 text-sm">Female</span>
+                                        </label>
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="gender" value="other" class="text-custom focus:ring-custom"/>
+                                            <span class="ml-2 text-sm">Other</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Mobile Number *</label>
+                                    <div class="flex">
+                                        <span class="inline-flex items-center px-3 !rounded-l-button border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">+91</span>
+                                        <input type="tel" required="" pattern="[0-9]{10}" class="flex-1 border-gray-300 focus:border-custom focus:ring-custom text-sm !rounded-r-button !rounded-l-none" placeholder="Enter mobile number"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">CIBIL Score</label>
+                                    <input type="number" min="300" max="900" class="w-full border-gray-300 focus:border-custom focus:ring-custom text-sm !rounded-button" placeholder="Enter CIBIL score"/>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Address *</label>
+                                    <textarea required="" rows="3" class="w-full border-gray-300 focus:border-custom focus:ring-custom text-sm !rounded-button" placeholder="Enter full address"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-medium text-gray-900 mb-4">Registration Details</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Date of Registration</label>
+                                    <input type="date" value="" class="w-full border-gray-300 bg-gray-50 cursor-not-allowed text-sm !rounded-button" disabled=""/>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Miscellaneous Charges *</label>
+                                    <div class="flex">
+                                        <span class="inline-flex items-center px-3 !rounded-l-button border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">₹</span>
+                                        <input type="number" required="" min="0" step="0.01" class="flex-1 border-gray-300 focus:border-custom focus:ring-custom text-sm !rounded-r-button !rounded-l-none" placeholder="Enter amount"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Transaction ID/Bill No</label>
+                                    <input type="text" value="TXN123456789" class="w-full border-gray-300 bg-gray-50 cursor-not-allowed text-sm !rounded-button" disabled=""/>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Account Type *</label>
+                                    <select required="" class="w-full border-gray-300 focus:border-custom focus:ring-custom text-sm !rounded-button">
+                                        <option value="">Select account type</option>
+                                        <option value="A">Type A</option>
+                                        <option value="B">Type B</option>
+                                        <option value="C">Type C</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-end space-x-4 pt-6">
+                            <button type="reset" class="!rounded-button px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50">Clear Form</button>
+                            <button type="submit" class="!rounded-button px-4 py-2 text-sm font-medium text-white bg-custom hover:bg-indigo-600">Submit Registration</button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="scripts/newmember.js">
+        
+    </script>
+</body>
+</html>

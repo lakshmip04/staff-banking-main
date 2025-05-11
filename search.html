@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Search</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="min-h-screen flex">
+        <aside id="sidebar" class=" js-sidebar fixed inset-y-0 left-0 z-50 w-64 transition-transform duration-300 transform -translate-x-full sm:translate-x-0 bg-white border-r border-gray-200">
+            <div class="h-16 flex items-center justify-between px-4 border-b border-gray-200">
+                <img src="" alt="Logo" class="h-8"/>
+                <button id="closeSidebar" class="sm:hidden text-gray-500 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <nav class="p-4 space-y-1">
+                <a href="index.html" class="flex items-center px-4 py-3 text-sm font-medium text-custom rounded-lg bg-indigo-50">
+                    <i class="fas fa-home w-5 h-5 mr-3"></i>
+                    Dashboard
+                </a>
+                <a href="members.html" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-users w-5 h-5 mr-3"></i>
+                    Members
+                </a>
+                <a href="newmember.html" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-user-plus w-5 h-5 mr-3"></i>
+                    New Member
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-money-bill-wave w-5 h-5 mr-3"></i>
+                    Payments
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-cog w-5 h-5 mr-3"></i>
+                    Settings
+                </a>
+            </nav>
+        </aside>
+        <div class="flex-1 min-w-0 sm:ml-64 transition-margin duration-300 ease-in-out" id="mainContent">
+            <nav class="bg-white border-b border-gray-200">
+                <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between h-16">
+                        <div class="flex">
+                            <div class="flex-shrink-0 flex items-center">
+                                <button id="openSidebar" class="sm:hidden text-gray-500 hover:text-gray-600">
+                                    <i class="fas fa-bars text-xl"></i>
+                                </button>
+                                <img class="h-8 w-auto" src="" alt="Logo">
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-gray-500 mr-4">John Doe</span>
+                            <img class="h-8 w-8 rounded-full" src="https://creatie.ai/ai/api/search-image?query=A professional headshot of a person wearing business attire against a neutral background, captured with studio lighting&width=100&height=100&orientation=squarish&flag=7f83b70e-7cd1-4fe5-bba4-502602d95d0e" alt="Profile">
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="bg-white rounded-lg shadow">
+                    <div class="p-6">
+                        <div class="flex flex-col space-y-6">
+                            <div class="flex items-center justify-between">
+                                <h1 class="text-2xl font-semibold text-gray-900">Payment Search</h1>
+                                <div class="relative">
+                                    <input type="text" placeholder="Search members..." class="w-96 pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom focus:border-custom">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fas fa-search text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-6">
+                                <div class="flex items-center space-x-2">
+                                    <input type="radio" id="today" name="filter" class="text-custom focus:ring-custom h-4 w-4">
+                                    <label for="today" class="text-sm font-medium text-gray-700">Today</label>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <input type="radio" id="pending" name="filter" class="text-custom focus:ring-custom h-4 w-4">
+                                    <label for="pending" class="text-sm font-medium text-gray-700">Pending</label>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <input type="radio" id="all" name="filter" class="text-custom focus:ring-custom h-4 w-4" checked>
+                                    <label for="all" class="text-sm font-medium text-gray-700">All</label>
+                                </div>
+                            </div>
+
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Date <i class="fas fa-sort ml-1"></i>
+                                            </th>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Loan Number
+                                            </th>
+                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Member Name
+                                            </th>
+                                            <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                        <tr class="hover:bg-gray-50">
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2024-02-20</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-custom hover:underline"><a href="#">L-2024-001</a></td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">John Smith</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right">
+                                                <button class="!rounded-button bg-green-500 hover:bg-red-500 text-white px-4 py-2 text-sm transition-colors duration-200">Quick Pay</button>
+                                                <button class="!rounded-button bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 text-sm transition-colors duration-200 ml-2"><a href="loanDetails.html">Loan Details</a></button>
+                                            </td>
+                                        </tr>
+                                        <tr class="hover:bg-gray-50">
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2024-02-19</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-custom hover:underline"><a href="#">L-2024-002</a></td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sarah Johnson</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right">
+                                                <button class="!rounded-button bg-green-500 hover:bg-red-500 text-white px-4 py-2 text-sm transition-colors duration-200">Quick Pay</button>
+                                                <button class="!rounded-button bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 text-sm transition-colors duration-200 ml-2"><a href="loanDetails.html">Loan Details</a></button>
+                                            </td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="flex items-center">
+                                    <select class="border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-custom focus:border-custom">
+                                        <option>10 per page</option>
+                                        <option>25 per page</option>
+                                        <option>50 per page</option>
+                                    </select>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="!rounded-button border border-gray-300 px-4 py-2 text-sm disabled:opacity-50" disabled>Previous</button>
+                                    <button class="!rounded-button bg-custom text-white px-4 py-2 text-sm">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading-overlay" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+        <div class="animate-spin rounded-full h-12 w-12 border-4 border-custom border-t-transparent"></div>
+    </div>
+
+    <script src="scripts/search.js">
+       
+    </script>
+</body>
+</html>
