@@ -19,14 +19,14 @@ export function Sidebar({
     <aside
       className={cn(
         "fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 transition-transform duration-300 ease-in-out",
-        open ? "translate-x-0" : "-translate-x-full sm:translate-x-0",
+        open ? "translate-x-0" : "-translate-x-full",
       )}
     >
       <div className="h-16 flex items-center justify-between px-4 border-b border-gray-200">
         <Link href="/" className="font-bold text-xl text-primary">
           LoanManager
         </Link>
-        <button onClick={() => setOpen(false)} className="sm:hidden text-gray-500 hover:text-gray-600">
+        <button onClick={() => setOpen(false)} className="text-gray-500 hover:text-gray-600">
           <i className="fas fa-times text-xl"></i>
         </button>
       </div>

@@ -38,7 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex bg-gray-50">
       <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
 
-      <div className={`flex-1 min-w-0 transition-all duration-300 ease-in-out ${sidebarOpen ? "sm:ml-64" : "ml-0"}`}>
+      <div className={`flex-1 min-w-0 transition-all duration-300 ease-in-out ${sidebarOpen ? "ml-64" : "ml-0"} w-full`}>
         <Header
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}

@@ -15,12 +15,12 @@ export function Header({
   extendSession: () => void
 }) {
   return (
-    <header className={`h-16 flex items-center justify-between px-4 sm:px-6 bg-white border-b border-gray-200 fixed top-0 right-0 z-40 transition-all duration-300 ease-in-out ${sidebarOpen ? "sm:left-64" : "left-0"}`}>
-      <button onClick={() => setSidebarOpen(!sidebarOpen)} className="sm:hidden text-gray-500 hover:text-gray-600">
-        <i className="fas fa-bars text-xl"></i>
+    <header className={`h-16 flex items-center justify-between px-4 sm:px-6 bg-white border-b border-gray-200 fixed top-0 right-0 z-40 transition-all duration-300 ease-in-out ${sidebarOpen ? "left-64" : "left-0"}`}>
+      <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-gray-500 hover:text-gray-600">
+        <i className={`fas ${sidebarOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
       </button>
 
-      <div className="flex items-center space-x-4 w-full">
+      <div className="flex items-center space-x-4 w-full ml-4">
         <Alert className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-0 flex-1 text-left">
           <AlertDescription>Welcome Staff, You Are Logged In!</AlertDescription>
         </Alert>
