@@ -7,7 +7,8 @@ import { connectDB } from '@/lib/db';
 export async function GET() {
   try {
     // Get token from cookie
-    const token = cookies().get('token')?.value;
+    const cookieStore = cookies();
+    const token = cookieStore.get('token')?.value;
 
     if (!token) {
       return NextResponse.json({ 

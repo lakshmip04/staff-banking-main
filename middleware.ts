@@ -1,15 +1,18 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { cookies } from 'next/headers';
 import { verify } from 'jsonwebtoken';
 
 export function middleware(request: NextRequest) {
   // Get token from the cookies
   const token = request.cookies.get('token')?.value;
   
-  // Only protect API routes that are not authentication-related
+  // Check if path starts with any of the exempted routes
+  const isTestRoute = request.nextUrl.pathname.startsWith('/api/test-db');
+  const isAuthRoute = request.nextUrl.pathname.startsWith('/api/auth');
+  
+  // Only protect API routes that are not exempt
   const isProtectedApiRoute = request.nextUrl.pathname.startsWith('/api/') && 
-                              !request.nextUrl.pathname.startsWith('/api/auth');
+                              !isAuthRoute && !isTestRoute;
 
   if (isProtectedApiRoute) {
     if (!token) {
